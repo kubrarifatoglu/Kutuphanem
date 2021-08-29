@@ -1,0 +1,229 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <title>Kütüphanem</title>
+    <style>
+        @@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+
+        body {
+            margin: 0;
+            height: calc(100vh - 8em);
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 1em;
+            font-size: 35px;
+        }
+
+        img {
+            width: 35%;
+            border-radius: 30%;
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .items {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            animation: carouselAnim 50s infinite alternate linear;
+        }
+
+        .entry {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            width: 300px;
+            background: #fff;
+            margin: 0.85em;
+            padding: 0.3em;
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        @@media only screen and (max-width: 768px) {
+            .items {
+                animation: carouselAnim 35s infinite alternate linear;
+            }
+
+            @@keyframes carouselAnim {
+                from {
+                    transform: translate(0, 0);
+                }
+
+                to {
+                    transform: translate(calc(-100% + (2 * 300px)));
+                }
+            }
+        }
+
+        .entry p {
+            text-align: center;
+            padding: 0.9em;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        @@keyframes carouselAnim {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(calc(-100% + (5 * 300px)));
+            }
+        }
+
+        .container .faders {
+            width: 100%;
+            position: absolute;
+            height: 100%;
+        }
+
+        .faders .right,
+        .faders .left {
+            background: linear-gradient( to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 0) 100% );
+            width: 15%;
+            height: 100%;
+            position: absolute;
+            z-index: 200;
+        }
+
+        .right {
+            right: 0;
+            background: linear-gradient( to left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 0) 100% );
+        }
+    </style>
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="container" style="max-width: 100%; padding-left: 5px; padding-right:5px;  ">
+            <div class="logo">
+                <a href="/Home/Index">Ana Sayfa</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a class="" href="/Home/Kitaplar">Kitaplar</a></li>
+                    <li><a href="/Home/Okuduklarim">Okuduklarım</a></li>
+                    <li><a href="/Home/Begendiklerim">Beğendiklerim</a></li>
+                    <li><a href="#">Profilim</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+
+
+        <div class="container" id="deneme">
+            <br />
+            <h1 style="color: #F0ECF2 ">En Çok Beğenilen Kitaplar </h1>
+            <div class="faders">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="items">
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+                <div class="entry">
+                    <p class="name">Michel De Montaigne</p>
+                    <img src="https://i.dr.com.tr/cache/500x400-0/originals/0000000230995-1.jpg" />
+                    <p class="quote" style="font-size:16px">"Daha iyisi yok! Dünyanın en iyisi!"</p>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <section class="home" style="display:block">
+    </section>
+
+
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</body>
+
+</html>
+
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@RenderSection("Scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
